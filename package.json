@@ -3,9 +3,12 @@
   "version": "0.0.1",
   "description": "A place to upload code to your 2019 RVAsec badge.",
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "build": "webpack --config webpack/webpack.config.prod.js  --colors",
     "start": "webpack-dev-server --open --config webpack/webpack.config.dev.js"
   },
+  "homepage": "https://dfirebaugh.github.io/hackrva-badge-sandbox-2019",
   "repository": {
     "type": "git"
   },
@@ -43,6 +46,7 @@
   },
   "dependencies": {
     "@babel/polyfill": "^7.0.0",
+    "gh-pages": "^2.0.1",
     "monaco-editor": "^0.16.1"
   }
 }
