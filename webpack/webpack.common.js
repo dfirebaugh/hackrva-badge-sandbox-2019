@@ -2,6 +2,7 @@ const Path = require('path');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MonacoWebpackPlugin = require('monaco-editor-webpack-plugin');
 
 module.exports = {
   entry: {
@@ -24,7 +25,11 @@ module.exports = {
     ]),
     new HtmlWebpackPlugin({
       template: Path.resolve(__dirname, '../src/index.html')
+    }),
+    new MonacoWebpackPlugin({
+      languages: ['javascript', 'typescript']
     })
+
   ],
   resolve: {
     alias: {
