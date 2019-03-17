@@ -47,6 +47,7 @@
   "dependencies": {
     "@babel/polyfill": "^7.0.0",
     "gh-pages": "^2.0.1",
+    "md5": "^2.2.1",
     "monaco-editor": "^0.16.1"
   }
 }
