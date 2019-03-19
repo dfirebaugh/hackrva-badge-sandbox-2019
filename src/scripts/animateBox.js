@@ -8,13 +8,11 @@ const updateStatus = status => {
   document.getElementById("status").textContent = status;
 };
 
-// Animation
-
 let start = null;
 let index = 0;
 
 export default (binary, transmitMsg) =>
-  new Promise(function(resolve, reject) {
+  new Promise((resolve, reject) => {
     const binaryDiv = document.createElement("div");
     binaryDiv.value = binary;
     document.getElementById("bits").appendChild(binaryDiv);
@@ -30,17 +28,10 @@ export default (binary, transmitMsg) =>
       progressBar.setAttribute("style", `width: ${progress}%`);
     };
     const drawFrame = () => {
-      if (binary[index] == 0) {
-        ctx.fillStyle = "white";
-        ctx.fillRect(0, 0, canvas.width, canvas.height);
-        ctx.fillStyle = "black";
-        ctx.fillRect(0, 0, canvas.width, canvas.height);
-      } else {
-        ctx.fillStyle = "black";
-        ctx.fillRect(0, 0, canvas.width, canvas.height);
-        ctx.fillStyle = "white";
-        ctx.fillRect(0, 0, canvas.width, canvas.height);
-      }
+      const color = binary[index] == 0 ? "black" : "white"
+
+      ctx.fillStyle = color;
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
       index++;
     };
     function step(timestamp) {
