@@ -24,7 +24,7 @@ export default (binary, transmitMsg) =>
     logger("length: ", binary.length);
     const updateProgress = progress => {
       const progressBar = document.getElementById("progressBar");
-      // console.log(progressBar);
+
       progressBar.setAttribute("style", `width: ${progress}%`);
     };
     const drawFrame = () => {
